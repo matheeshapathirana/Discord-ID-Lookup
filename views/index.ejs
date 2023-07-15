@@ -1,0 +1,36 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/loader.ejs") %>
+
+<div class="container">
+    <div class="card bg-dark text-white mt-5 shadow-sm">
+        <% if (error) { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <div class="card-body">
+            <form method="POST">
+                <div class="form-group">
+                    <div class="card-title">
+                        <label for="userid" class="usr_title">User ID <i class="required" data-placement="right" title="Requis">*</i></label>
+                    </div>
+                    <input type="text" class="form-control" id="userid" name="user" aria-describedby="help" autocomplete="off"  placeholder="Enter user / bot id or token." autofocus required>
+                </div>
+                <div class="card-body">
+                    <button type="submit" class="btn btn-blurple rounded" style="width: 100% !important;">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="card-body notice_footer">
+            <p id="info" class="card-text text-muted">Not affiliated with Discord, Inc.
+                — <a href="https://github.com/matheesha-pathirana" class="card-text text-muted" target="_blank">Github</a>
+                — <a href="https://matheeshapathiranagd.rf.gd" class="card-text text-muted" target="_blank">Matheesha</a>
+        </div>
+    </div>
+</div>
+<script>
+    $(".required").tooltip();
+</script>
+</body>
+
+</html>

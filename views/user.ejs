@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="vue-managed"><%= user.username %></title>
+    <!-- Import Font Awesome Icon Kit -->
+    <script src="https://kit.fontawesome.com/6e5392ed44.js" crossorigin="anonymous"></script>
+    <!-- Import Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Import Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.css">
+    <!-- Import Custom CSS -->
+    <link rel="stylesheet" href="/css/user.css">
+
+</head>
+<body>
+<div class="box profile">
+    <div class="top-part">
+        <img class="profile-picture" src="<%= user.displayAvatarURL({ dynamic: true, format: "png", size: 1024 }) %>" alt="Profile Picture" />
+        <p class="name"><%= user.username %></p>
+        <ul class="badges">
+            <%
+            flags.forEach(badge => {
+                if (badge.name === "Bot" || badge.name === "Verified Bot") return;
+                else {
+                    %>
+                <li><img src="<%= badge.url %>" alt="<%= badge.name %>"/></li>
+            <%
+                }
+            })
+            %>
+        </ul>
+    </div>
+    <div class="middle-part">
+        <div class="bio">
+            <h5 class="user-details"><b>ID:</b> <%= user.id %></h5>
+            <h5 class="user-details"><b>Username:</b> <%= user.username %></h5>
+            <h5 class="user-details"><b>User - Tag:</b> <%= user.tag %></h5>
+            <h5 class="user-details"><b>Discriminator:</b> <%= user.discriminator %></h5>
+            <h5 class="user-details"><b>Bot?:</b> <%= user.bot %></h5>
+            <h5 class="user-details"><b>Created at:</b> <%= user.createdAt.toLocaleString() %></h5>
+        </div>
+
+        <div class="home_link">
+            <a href="/" class="home_button">← Home.</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

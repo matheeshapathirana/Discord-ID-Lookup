@@ -1,0 +1,30 @@
+{
+  "name": "discord.id",
+  "version": "1.0.0",
+  "description": "Fetch any discord user by id !",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssoraa/discord.id.git"
+  },
+  "author": "Sora, Snowflake, Androz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssoraa/discord.id/issues"
+  },
+  "homepage": "https://github.com/ssoraa/discord.id#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "discord.js": "^12.5.3",
+    "ejs": "^3.1.7",
+    "express": "^4.18.2",
+    "figlet": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
